@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}réinitialisation mot de passe
+{% endblock %}
+
+{% block body %}
+	{{ include('partials/title_section.html.twig', {titre}) }}
+	<p>Bonjour
+		<br>
+		Vous allez recevoir un email contenant le lien de réinitialisation de votre mot de passe.
+		<br>
+		Ce lien expire dans
+		{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+	<p>Veuillez vérifier dans vos spams si toute fois vous ne l'avez pas reçu.
+		<br>
+		<a href="{{ path('app_forgot_password_request') }}">Essayez à nouveau</a>.</p>
+{% endblock %}
